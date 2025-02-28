@@ -15,3 +15,14 @@ def number_of_characters(text):
         else:
             characters[letters] = 1
     return characters
+def list_of_characters(character_dict):
+    def sort_on(dict):
+        return list(dict.values())[0]
+    sorted_list = []
+    for characters in character_dict:
+        single_dict = {}
+        amount = character_dict[characters]
+        single_dict[characters] = amount
+        sorted_list.append(single_dict)
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
