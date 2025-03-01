@@ -12,6 +12,9 @@ def main():
     book = sys.argv[1]
     try:
         get_book_text(book)
+    except IsADirectoryError:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     except FileNotFoundError:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
