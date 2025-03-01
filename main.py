@@ -10,6 +10,11 @@ def main():
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
     book = sys.argv[1]
+    try:
+        get_book_text(book)
+    except FileNotFoundError:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     text = get_book_text(book)
     num_words = number_of_words(text)
     character_dict = number_of_characters(text)
